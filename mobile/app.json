@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "NexusFlow",
+    "slug": "nexusflow",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.nexusflow.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0C",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "dev.nexusflow.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#F4F3EE",
+          "dark": {
+            "backgroundColor": "#07080C"
+          }
+        }
+      ]
+    ],
+    "scheme": "nexusflow",
+    "backgroundColor": "#F4F3EE",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

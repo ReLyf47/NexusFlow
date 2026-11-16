@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   NEXUSFLOW ARTISTIC CLASH DESIGN SYSTEM
+   Neo-Brutalism x Y2K x Holographic x Dreamcore x Minimal Designer
+   Strict WCAG AA/AAA readability (verified by scripts/verify_contrast.js)
+   ========================================================================== */
+
+:root {
+  /* High-Contrast Solid Canvas & Surfaces */
+  --bg-canvas: #F4F3EE;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FAF9F5;
+  --border-hard: #0A0A0C;
+  --text-main: #0A0A0C;
+  --text-sub: #3E404C;
+  --text-muted: #646675;
+  --solid-shadow: 4px 4px 0px #0A0A0C;
+  --solid-shadow-sm: 2px 2px 0px #0A0A0C;
+  --solid-shadow-lg: 6px 6px 0px #0A0A0C;
+
+  /* Accent "ink": accent hues darkened until they pass AA as text on light surfaces */
+  --ink-pink: #C8005A;
+  --ink-cyan: #00737A;
+  --ink-mint: #00704F;
+  --ink-orange: #A64B00;
+  --ink-yellow: #7A6200;
+  --ink-purple: #7928CA;
+
+  /* Y2K Holographic Spectrum */
+  --holo-prism: linear-gradient(135deg, #FF1A75 0%, #FF8A00 18%, #FFE600 36%, #00E5A3 54%, #00B8FF 72%, #9D00FF 100%);
+  /* Darkest band kept at #94A3B8 so black sticker text stays >= 7:1 */
+  --chrome-gradient: linear-gradient(180deg, #FFFFFF 0%, #E9EDF2 35%, #CBD5E1 48%, #94A3B8 52%, #CBD5E1 70%, #FFFFFF 100%);
+
+  /* Dreamcore Liminal Pastel Aura */
+  --dream-haze: radial-gradient(circle, rgba(216, 180, 254, 0.45) 0%, rgba(167, 243, 208, 0.35) 45%, transparent 70%);
+  --dream-aura-shadow: 4px 4px 0px #0A0A0C, 10px 10px 30px rgba(168, 85, 247, 0.32);
+  --selection-bg: #FF1A75;
+  --selection-text: #0A0A0C;
+}
+
+[data-theme='dark'] {
+  --bg-canvas: #07080C;
+  --bg-surface: #0E1017;
+  --bg-surface-elevated: #151824;
+  --border-hard: #FFFFFF;
+  --text-main: #F4F4F6;
+  --text-sub: #B5B8C8;
+  --text-muted: #82869A;
+  --solid-shadow: 4px 4px 0px #00F0FF;
+  --solid-shadow-sm: 2px 2px 0px #00F0FF;
+  --solid-shadow-lg: 6px 6px 0px #FF1A75;
+
+  --ink-pink: #FF1A75;
+  --ink-cyan: #00F0FF;
+  --ink-mint: #00E5A3;
+  --ink-orange: #FF8A00;
+  --ink-yellow: #FFE600;
+  --ink-purple: #B98CFF;
+
+  --holo-prism: linear-gradient(135deg, #FF1A75 0%, #FF8A00 20%, #FFE600 40%, #00F0FF 60%, #7928CA 85%, #FF1A75 100%);
+  --chrome-gradient: linear-gradient(180deg, #475569 0%, #1E293B 40%, #0F172A 50%, #334155 52%, #1E293B 80%, #475569 100%);
+  --dream-haze: radial-gradient(circle, rgba(121, 40, 202, 0.35) 0%, rgba(0, 240, 255, 0.22) 50%, transparent 75%);
+  --dream-aura-shadow: 4px 4px 0px #00F0FF, 12px 12px 35px rgba(0, 240, 255, 0.28);
+  --selection-bg: #00F0FF;
+  --selection-text: #07080C;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink-cyan);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+  border-left: 2px solid var(--border-hard);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border: 1.5px solid var(--border-hard);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-main);
+}
+
+/* Rendered Markdown — readability rules: 16px body, 1.6 line-height, ~65ch measure */
+.prose-nf {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  max-width: 65ch;
+}
+.prose-nf > * + * {
+  margin-top: 0.9em;
+}
+.prose-nf h1,
+.prose-nf h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 1.6em;
+}
+.prose-nf h1 {
+  font-size: 1.6rem;
+}
+.prose-nf h2 {
+  font-size: 1.3rem;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--border-hard);
+}
+.prose-nf h3,
+.prose-nf h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 1.4em;
+}
+.prose-nf > :first-child {
+  margin-top: 0;
+}
+.prose-nf ul,
+.prose-nf ol {
+  padding-left: 1.4em;
+}
+.prose-nf ul {
+  list-style: square;
+}
+.prose-nf ol {
+  list-style: decimal;
+}
+.prose-nf li + li {
+  margin-top: 0.35em;
+}
+.prose-nf li::marker {
+  color: var(--ink-pink);
+}
+.prose-nf strong {
+  font-weight: 700;
+}
+.prose-nf a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-pink);
+  text-underline-offset: 3px;
+}
+.prose-nf code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82em;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border-hard);
+  background: var(--bg-surface-elevated);
+}
+.prose-nf pre {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 2.5px solid var(--border-hard);
+  background: var(--bg-surface-elevated);
+  box-shadow: var(--solid-shadow-sm);
+}
+.prose-nf pre code {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.prose-nf blockquote {
+  border-left: 4px solid var(--ink-pink);
+  padding: 0.25em 0 0.25em 1em;
+  color: var(--text-sub);
+  font-style: italic;
+}
+.prose-nf table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+}
+.prose-nf th,
+.prose-nf td {
+  border: 2px solid var(--border-hard);
+  padding: 0.4em 0.7em;
+}
+.prose-nf th {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background: var(--bg-surface-elevated);
+}
+.prose-nf hr {
+  border: 0;
+  border-top: 2px dashed var(--border-hard);
+}
+.prose-nf input[type='checkbox'] {
+  accent-color: var(--ink-pink);
+  margin-right: 0.4em;
+}
